@@ -73,7 +73,7 @@ Fully unload and reload the model in your frontend (LM Studio / llama.cpp / Kobo
 
 6. **Set a low temperature**
 
-Use a low temperature (e.g. 0.3-0.5) to reduce English drift in long outputs. This is critical — the template fix alone does not fully prevent the model from switching back to English.
+Use a low temperature to reduce English drift in long outputs. This is critical — the template fix alone does not fully prevent the model from switching back to English.
 
 ### LM Studio Note
 
