@@ -110,9 +110,11 @@ LM Studio may override the GGUF's embedded template with its own. Ensure that:
 
 ### Environment
 
-- Model: Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-Q4_K_P
+- Model: Qwen3.8-27B-Uncensored-HauhauCS-Aggressive
+- Quantization: **Q4_K_P** (verified)
 - Frontend: LM Studio
-- Quantization: Q4_K_P
+
+> **Note on other quantizations:** The `tokenizer.chat_template` is stored as metadata in the GGUF header and is identical across all quantization variants (Q4_K_P, Q5_K_P, Q6_K, Q8, etc.). Quantization only affects tensor data, not metadata. The patch should therefore work on any quantization of this model, but has only been tested on Q4_K_P.
 
 ### Before Fix
 
