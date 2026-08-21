@@ -1,0 +1,6 @@
+*.gguf
+*.bin
+__pycache__/
+*.pyc
+original_chat_template_backup.txt
+meta_dump*.txt
