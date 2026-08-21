@@ -55,12 +55,16 @@ def main():
                 if idx2 >= 0:
                     print("\n=== _lang 变量区域 ===")
                     print(tpl[idx2-10:idx2+200])
-                idx3 = tpl.find("Never switch")
-                if idx3 >= 0:
-                    print("\n=== 语言规则确认存在 ===")
-                    print(tpl[idx3-50:idx3+100])
+                marker = "简短思考，永远使用中文。"
+                if tpl.count(marker) == 1:
+                    print("\n=== 注入模板确认存在 ===")
+                    print(marker)
                 else:
-                    print("\n!!! 警告: 未找到 'Never switch' 关键词")
+                    print(f"\n!!! 警告: 注入模板出现次数为 {tpl.count(marker)}，预期为 1")
+                old_markers = ["Always think", "Think carefully", "Never switch"]
+                found_old = [marker for marker in old_markers if marker in tpl]
+                if found_old:
+                    print(f"!!! 警告: 仍存在旧英文指令: {found_old}")
                 break
             skip_value(f, vtype)
     return 0

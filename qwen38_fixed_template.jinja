@@ -42,16 +42,7 @@
 {%- if not messages %}
     {{- raise_exception('No messages provided.') }}
 {%- endif %}
-{%- set _lang = "Always think and respond in the same language as the user's most recent input. Never switch to English or mix languages unless the user explicitly asks. " %}
-{%- set reasoning_instructions = _lang %}
-{%- if enable_thinking is undefined or enable_thinking is true %}
-    {%- set _effort = reasoning_effort|default('xhigh') %}
-    {%- if _effort == 'xhigh' %}
-        {%- set reasoning_instructions = 'Think carefully, validate key assumptions, consider alternatives, prioritize correctness and clarity. ' ~ _lang %}
-    {%- elif _effort == 'low' %}
-        {%- set reasoning_instructions = 'Keep thinking brief and focused, move directly to conclusion. ' ~ _lang %}
-    {%- endif %}
-{%- endif %}
+{%- set reasoning_instructions = '简短思考，永远使用中文。' %}
 {%- if tools and tools is iterable and tools is not mapping %}
     {{- '<|im_start|>system\n' }}
     {%- if reasoning_instructions %}

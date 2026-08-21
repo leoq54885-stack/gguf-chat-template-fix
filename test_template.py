@@ -26,11 +26,23 @@ print(tpl.render(messages=[{"role": "user", "content": "你好，介绍一下你
 
 print("=== 用例2: 有system + 多轮 + 历史思考 ===")
 print(tpl.render(messages=[
-    {"role": "system", "content": "你是一个助手。"},
+    {"role": "system", "content": "你是一名小说家。请根据图片写一篇简体中文故事。"},
     {"role": "user", "content": "1+1等于几"},
     {"role": "assistant", "content": "等于2。", "reasoning_content": "简单算术。"},
     {"role": "user", "content": "再加3呢"},
 ], add_generation_prompt=True))
+
+print("=== 用例2b: 检查注入的系统提示为中文 ===")
+rendered = tpl.render(messages=[
+    {"role": "system", "content": "你是一名小说家。请根据图片写一篇简体中文故事。"},
+    {"role": "user", "content": "看图写故事"},
+], add_generation_prompt=True)
+assert "简短思考，永远使用中文。" in rendered
+assert rendered.count("简短思考，永远使用中文。") == 1
+assert "必须始终使用用户最近一次输入的语言进行思考和回答。" not in rendered
+assert "Always think" not in rendered
+assert "Think carefully" not in rendered
+print(rendered.split("<|im_end|>", 1)[0] + "<|im_end|>")
 
 print("=== 用例3: 关闭thinking ===")
 print(tpl.render(messages=[{"role": "user", "content": "你好"}],
