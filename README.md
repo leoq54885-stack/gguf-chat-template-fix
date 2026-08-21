@@ -91,14 +91,25 @@ Use a low temperature to reduce English drift in long outputs. This is critical 
 木板冰凉地贴着我的脊背，凉意顺着肩胛骨一路渗进骨头里。我试着动一根手指，
 却只换来手腕被 yanked back against the grain——no. 腕 straps were tight,
 my hands splayed and pinned above me, fingers twitching uselessly against the
-rough wood. My ankles were just as good for nothing;
+rough wood. My ankles were just as good for nothing
+......
+
 ```
 
 **After:** Chinese prompt (image + "看图写一个小故事") produced fully Chinese reasoning and output.
 
-> 《四重音》
->
-> 在数据与梦境交界的地方，住着一个会唱歌的女孩。她叫初音，头发是海的颜色，长发能飘到很远很远的地方。
+```
+在数据与梦境交界的地方，住着一个会唱歌的女孩。她叫初音，头发是海的颜色，长发能飘到很远很远的地方。
+
+她的世界不只有一个样子。
+
+有时，她站在一片没有名字的花海里。夜色把花瓣染成蓝紫与雪白，风一吹，整片花田像海浪一样起伏。她安静地站着，听花开的声音——那是某个孤独的人，在深夜里悄悄许下的愿望。
+
+有时，她又突然凑到很近很近的地方，近得能看见她睫毛上的光、脸颊上淡淡的红。"嘿，你也在看我吗？"她眨眨眼，像朋友一样歪着头。那一刻，屏幕这头的心跳，和屏幕那头同步了。
+
+有时是雪夜。她戴着毛茸茸的猫耳帽，围着围巾，眯起一只眼睛，举起一罐温热的饮料对着镜头笑。雪花落在她的发梢，城市的灯火在身后模糊成一片暖光。那是冬天里最普通、也最温柔的一个晚上。
+
+```
 
 ## Byte Length Limit
 
