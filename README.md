@@ -75,10 +75,6 @@ Fully unload and reload the model in your frontend (LM Studio / llama.cpp / Kobo
 
 Use a low temperature to reduce English drift in long outputs. This is critical — the template fix alone does not fully prevent the model from switching back to English.
 
-### LM Studio Note
-
-LM Studio may override the GGUF template with its own. Ensure Prompt Template is set to **Default**, or paste `qwen38_fixed_template.jinja` into the custom Prompt Template.
-
 ## Limitations
 
 - **Not a perfect fix.** The model may still drift to English in long outputs, especially at higher temperatures.
@@ -89,7 +85,7 @@ LM Studio may override the GGUF template with its own. Ensure Prompt Template is
 
 **Environment:** Qwen3.8-27B-Uncensored-HauhauCS-Aggressive, Q4_K_P, LM Studio, low temperature.
 
-**Before:** Chinese input drifted to English within a few sentences.
+**Before:** Chinese prompt (image + "撰写恐怖小说") drifted to English within a few sentences.
 
 ```
 木板冰凉地贴着我的脊背，凉意顺着肩胛骨一路渗进骨头里。我试着动一根手指，
