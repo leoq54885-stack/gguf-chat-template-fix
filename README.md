@@ -82,7 +82,7 @@ LM Studio may override the GGUF template with its own. Ensure Prompt Template is
 ## Limitations
 
 - **Not a perfect fix.** The model may still drift to English in long outputs, especially at higher temperatures.
-- **Low temperature required.** Combine with temp 0.3-0.5 for best results.
+- **Low temperature required.** Combine with temp for best results.
 - **Waiting for official fix.** The model author ([HauhauCS](https://huggingface.co/HauhauCS)) is aware of the issue and working on a fix.
 
 ## Test Result
